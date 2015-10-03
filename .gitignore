@@ -1,0 +1,6 @@
+.DS_Store
+.go
+gin-bin
+cron-server
+main
+*.dat

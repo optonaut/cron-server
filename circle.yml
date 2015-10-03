@@ -1,0 +1,21 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build -t $TUTUM_REPO .
+
+test:
+  override:
+    - echo "No tests yet"
+
+deployment:
+  hub:
+    branch: [master, dev]
+    commands:
+      - docker run $TUTUM_REPO cat main > main
+      - docker build --rm -t $TUTUM_REPO:$CIRCLE_BRANCH -f Dockerfile.dist .
+      - docker login -e $TUTUM_EMAIL -u $TUTUM_USER -p $TUTUM_PASS tutum.co
+      - docker push $TUTUM_REPO:$CIRCLE_BRANCH
+      - if TAG=$(git describe --exact-match --tags $CIRCLE_SHA1 2> /dev/null); then echo $TAG; docker tag $TUTUM_REPO:$CIRCLE_BRANCH $TUTUM_REPO:$TAG; docker push $TUTUM_REPO:$TAG; docker tag $TUTUM_REPO:$CIRCLE_BRANCH $TUTUM_REPO:${TAG:0:3}; docker push $TUTUM_REPO:${TAG:0:3}; docker tag $TUTUM_REPO:$CIRCLE_BRANCH $TUTUM_REPO:${TAG:0:1}; docker push $TUTUM_REPO:${TAG:0:1}; else true; fi
