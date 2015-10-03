@@ -1,0 +1,38 @@
+{
+	"ImportPath": "github.com/optonaut/cron-server",
+	"GoVersion": "go1.5.1",
+	"Deps": [
+		{
+			"ImportPath": "github.com/Sirupsen/logrus",
+			"Comment": "v0.8.6-11-g44512f0",
+			"Rev": "44512f0d08f7f81a75f5b04a2cb6d81ed25431ca"
+		},
+		{
+			"ImportPath": "github.com/bitly/go-nsq",
+			"Comment": "v1.0.4-13-ga3aee1d",
+			"Rev": "a3aee1d8e104a99d8fedffe2c45832df6a96d735"
+		},
+		{
+			"ImportPath": "github.com/dgrijalva/jwt-go",
+			"Comment": "v2.3.0-1-g9fe8afe",
+			"Rev": "9fe8afe96d32468fba230b8b22acea86251f0506"
+		},
+		{
+			"ImportPath": "github.com/mreiferson/go-snappystream",
+			"Comment": "v0.2.3",
+			"Rev": "028eae7ab5c4c9e2d1cb4c4ca1e53259bbe7e504"
+		},
+		{
+			"ImportPath": "github.com/optonaut/shared-server/utils",
+			"Rev": "82b2ec612ca5a4c2457b7e3e9dc6cea12fd2884f"
+		},
+		{
+			"ImportPath": "github.com/optonaut/shared-server/workerdata",
+			"Rev": "82b2ec612ca5a4c2457b7e3e9dc6cea12fd2884f"
+		},
+		{
+			"ImportPath": "github.com/satori/go.uuid",
+			"Rev": "6b8e5b55d20d01ad47ecfe98e5171688397c61e9"
+		}
+	]
+}
