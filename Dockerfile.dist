@@ -1,0 +1,11 @@
+FROM alpine
+
+WORKDIR /app
+
+ADD main main
+
+RUN chmod +x main
+RUN apk --update add ca-certificates
+
+EXPOSE 3000
+CMD ["./main"]
